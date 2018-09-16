@@ -1,6 +1,18 @@
 
-ReactDOM.render(React.createElement(
-    'h1',
-    null,
-    'Hello world!'
-), document.getElementById('content'));
+let helloWorldElement = React.createElement(
+  'h1',
+  null,
+  'Hello World!'
+);
+
+class HelloWorld extends React.Component {
+  render() {
+    return React.createElement(
+      'div',
+      null,
+      helloWorldElement
+    );
+  }
+}
+
+ReactDOM.render(React.createElement(HelloWorld, null), document.getElementById('content'));

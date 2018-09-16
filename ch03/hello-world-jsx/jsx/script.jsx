@@ -1,5 +1,15 @@
 
+let helloWorldElement = <h1>Hello World!</h1>
+
+class HelloWorld extends React.Component {
+  render() {
+    return <div>
+      {helloWorldElement}
+    </div>
+  }
+}
+
 ReactDOM.render(
-    <h1>Hello world!</h1>,
+    <HelloWorld/>,
     document.getElementById('content')
   )
