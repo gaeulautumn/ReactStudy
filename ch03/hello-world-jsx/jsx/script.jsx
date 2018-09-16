@@ -1,17 +1,14 @@
 class Content extends React.Component {
-  getUrl() {
-    return 'http://webapplog.com'
-  }
+ 
   render() {
-    return (
-      <div>
-        <p>Your REST API URL is: <a href={this.getUrl()}>{this.getUrl()}</a></p>
-      </div>
-    )
+    let sessionFlag = this.props.user.session
+
+    return <div>
+        <a href="{(sessionFlag)? '/logout' : '/login'}">
+            {(sessionFlag)? 'Logout' : 'Login'}
+        </a>
+    </div>
   }
 }
 
-ReactDOM.render(
-  <Content />,
-  document.getElementById('content')
-)
+ReactDOM.render(React.createElement(Content, null), document.getElementById('content'));
