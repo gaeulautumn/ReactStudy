@@ -7,9 +7,9 @@ class Button extends React.Component {
 Button.defaultProps = {buttonLabel: 'Submit'}
 
 Button.propTypes = {
-  handler: PropTypes.func.isRequired,
+  handler: PropTypes.func.isRequired,  // 필수값
   title: PropTypes.string,
-  email(props, propName, componentName) {
+  email(props, propName, componentName) { //정규식을 통한 유효성 검사
     let emailRegularExpression = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
     if (!emailRegularExpression.test(props[propName])) {
       return new Error('Email validation failed!')

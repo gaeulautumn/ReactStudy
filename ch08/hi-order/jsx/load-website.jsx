@@ -1,3 +1,4 @@
+//고차 컴포넌트
 const LoadWebsite = (Component) => {
   class _LoadWebsite extends React.Component {
     constructor(props) {
@@ -15,10 +16,10 @@ const LoadWebsite = (Component) => {
     }
     render() {
       console.log(this.state)
-      return <Component {...this.state} {...this.props} />
+      return <Component {...this.state} {...this.props} /> //펼침 연산자
     }
   }
-  _LoadWebsite.displayName = 'EhnancedComponent'
+  _LoadWebsite.displayName = 'EhnancedComponent' //고차 컴포넌트의 표시 이름 지정
 
   return _LoadWebsite
 }
